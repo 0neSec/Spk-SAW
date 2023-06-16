@@ -47,9 +47,10 @@ class NormalisasiController extends Controller
             $nama_alt = $alternative->nama;
             $results[] = ['nomor' => $nomor, 'nama_alt' => $nama_alt, 'harga' => $norm_harga,'kualitas' => $norm_kualitas,
             'berat' => $norm_berat, 'iso' => $norm_iso,'resolusi' => $norm_resolusi,'hasil'=>$hasil];
+            arsort($results);
         }
 
 
-        return view('hasil', ['results' => $results]);
+        return view('hasil', ['results' => collect($results)->sortByDesc('hasil')->values()->all()]);
     }
 }
