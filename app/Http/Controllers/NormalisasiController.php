@@ -39,18 +39,19 @@ class NormalisasiController extends Controller
 
 
             // Hitung hasil SAW
-            $hasil = ($weights[0] * $norm_harga)+ ($weights[1] * $norm_kualitas)  + ($weights[2] * $norm_berat)
-                + ($weights[3] * $norm_iso) + ($weights[4] * $norm_resolusi);
+            // $hasil = ($weights[0] * $norm_harga)+ ($weights[1] * $norm_kualitas)  + ($weights[2] * $norm_berat)
+            //     + ($weights[3] * $norm_iso) + ($weights[4] * $norm_resolusi);
 
             $nomor++;
 
             $nama_alt = $alternative->nama;
+            $des = $alternative->deskripsi;
             $results[] = ['nomor' => $nomor, 'nama_alt' => $nama_alt, 'harga' => $norm_harga,'kualitas' => $norm_kualitas,
-            'berat' => $norm_berat, 'iso' => $norm_iso,'resolusi' => $norm_resolusi,'hasil'=>$hasil];
-            arsort($results);
+            'berat' => $norm_berat, 'iso' => $norm_iso,'resolusi' => $norm_resolusi,'deskripsi' => $des];
+            // arsort($results);
         }
 
 
-        return view('hasil', ['results' => collect($results)->sortByDesc('hasil')->values()->all()]);
+        return view('normalisasi', ['results' => collect($results)->sortByDesc('hasil')->values()->all()]);
     }
 }

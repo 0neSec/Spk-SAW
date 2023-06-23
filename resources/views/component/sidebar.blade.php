@@ -6,7 +6,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3">Camera </div>
     </a>
 
     <!-- Divider -->
@@ -26,12 +26,12 @@
             <span>Alternatif</span></a>
     </li>
     <li class="nav-item active">
-        <a class="nav-link" href="/hasil">
-            <span>Hasil</span></a>
+        <a class="nav-link" href="/normalisasi">
+            <span>Normalisasi</span></a>
     </li>
     <li class="nav-item active">
-        <a class="nav-link" href={{ route('home') }}>
-            <span>Penilain</span></a>
+        <a class="nav-link" href="/hasil">
+            <span>Hasil</span></a>
     </li>
 
 

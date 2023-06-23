@@ -13,7 +13,7 @@
                             </div>
                             <div class="col-sm-12 col-xs-12 text-right">
                                 <div class="btn_group">
-
+                                 
                                     <input type="text" class="form-control" placeholder="Search">
                                     <button class="btn btn-default" title="Reload"><i
                                             class="fa fa-sync-alt"></i></button>
@@ -31,17 +31,29 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Nama Alternatif</th>
-                                    <th>deskripsi</th>
-                                    <th>hasil</th>
+                                    {{-- <th>deskripsi</th> --}}
+                                    <th>Harga</th>
+                                    <th>Kualitas</th>
+                                    <th>Berat</th>
+                                    <th>Iso</th>
+                                    <th>Resolusi</th>
+
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($results as  $result)
+
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $result['nama_alt'] }}</td>
-                                    <td>{{ $result['deskripsi'] }}</td>
-                                    <td>{{ $result['hasil'] }}</td>
+                                    {{-- <td>{{ $result['deskripsi'] }}</td> --}}
+                                    <td>{{ $result['harga'] }}</td>
+                                    <td>{{ $result['kualitas'] }}</td>
+                                    <td>{{ $result['berat'] }}</td>
+                                    <td>{{ $result['iso'] }}</td>
+                                    <td>{{ $result['resolusi'] }}</td>
+
+
                                     {{-- <td>
                                         @csrf
                                         <ul class="action-list">

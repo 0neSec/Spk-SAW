@@ -31,11 +31,12 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Nama alternatif</th>
-                                        <th>deskripsi</th>
+                                        <th>Image</th>
+                                        {{-- <th>deskripsi</th> --}}
                                         <th>harga</th>
                                         <th>kualita</th>
                                         <th>berat</th>
-                                        <th>sio</th>
+                                        <th>iso</th>
                                         <th>resolusi</th>
 
                                     </tr>
@@ -45,7 +46,8 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $name_column->nama }}</td>
-                                        <td>{{ $name_column->deskripsi }}</td>
+                                        <td>{{ $name_column->image }}</td>
+                                        {{-- <td>{{ $name_column->deskripsi }}</td> --}}
                                         <td>{{ $name_column->harga }}</td>
                                         <td>{{ $name_column->kualitas }}</td>
                                         <td>{{ $name_column->berat }}</td>
@@ -67,30 +69,6 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                        </div>
-                        <div class="panel-footer">
-                            <div class="row">
-                                <div class="col col-sm-6 col-xs-6">showing <b>5</b> out of <b>25</b> entries</div>
-                                <div class="col-sm-6 col-xs-6">
-                                    <ul class="pagination hidden-xs pull-right">
-                                        <li><a href="#">
-                                                << /a>
-                                        </li>
-                                        <li class="active"><a href="#">1</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li><a href="#">4</a></li>
-                                        <li><a href="#">5</a></li>
-                                        <li><a href="#">></a></li>
-                                    </ul>
-                                    <ul class="pagination visible-xs pull-right">
-                                        <li><a href="#">
-                                                << /a>
-                                        </li>
-                                        <li><a href="#">></a></li>
-                                    </ul>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

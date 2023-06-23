@@ -5,7 +5,7 @@
     <div class="col-lg-6 mx-auto">
         <div class="card-body bg-light">
             <div class="container">
-                <form action="/alternatif/store" method="POST">
+                <form action="/alternatif/store" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="controls">
                         <div class="form-group">
@@ -18,6 +18,12 @@
                             <label for="deskripsi">Deskripsi *</label>
                             <input id="deskripsi" type="text" name="deskripsi" class="form-control"
                                 placeholder="Please enter deskripsi alternatif" required="required"
+                                >
+                        </div>
+                        <div class="form-group">
+                            <label for="image">image *</label>
+                            <input id="image" type="file" name="image" class="form-control"
+                                placeholder="Please enter image alternatif" required="required"
                                 >
                         </div>
                         <div class="form-group">

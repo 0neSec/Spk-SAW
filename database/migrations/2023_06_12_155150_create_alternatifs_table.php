@@ -15,13 +15,14 @@ return new class extends Migration
     {
         Schema::create('alternatif', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_alternatif');
+            $table->string('nama');
             $table->text('deskripsi');
-            $table->double('harga', 15, 8)->nullable()->default(123.4567);
-            $table->double('kualitas', 15, 8)->nullable()->default(123.4567);
-            $table->double('berat', 15, 8)->nullable()->default(123.4567);
-            $table->double('iso', 15, 8)->nullable()->default(123.4567);
-            $table->double('resolusi', 15, 8)->nullable()->default(123.4567);
+            $table->string('image');
+            $table->double('harga');
+            $table->double('kualitas');
+            $table->double('berat');
+            $table->double('iso');
+            $table->double('resolusi');
             $table->timestamps();
         });
     }

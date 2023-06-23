@@ -22,25 +22,36 @@ class AlternatifController extends Controller
     public function store(Request $request){
         // dd($request->all());
         // dd($request->except(['_token','submit']));
-         $request->validate([
-            "nama" => 'required',
-            "deskripsi" => 'required',
-            "harga" => 'required',
-            "kualitas" => 'required',
-            "berat" => 'required',
-            "iso" => 'required',
-            "resolusi" => 'required'
+        $data = $request->validate([
+            'nama' => 'required',
+            'deskripsi' => 'required',
+            'harga' => 'required',
+            'kualitas' => 'required',
+            'berat' => 'required',
+            'iso' => 'required',
+            'resolusi' => 'required',
+            'image' => 'required|file|image|mimes:png,jpg,jpeg|max:2048'
         ]);
+
+        $file = $request->file('image');
+
+     $filename= uniqid().'.'. $file->getClientOriginalExtension();
+       $file->storeAs('public/image',$filename);
+       $data['image']= $filename;
+
+        Alternatif::create($data);
+
+        return  redirect('/alternatif');
         // dd($request->all());
-        $alternatif = new Alternatif;
-        $alternatif->nama = $request->nama;
-        $alternatif->deskripsi = $request->deskripsi;
-        $alternatif->harga = $request->harga;
-        $alternatif->kualitas = $request->kualitas;
-        $alternatif->berat = $request->berat;
-        $alternatif->iso = $request->iso;
-        $alternatif->berat = $request->berat;
-        $alternatif->save();
+        // $alternatif = new Alternatif;
+        // $alternatif->nama = $request->nama;
+        // $alternatif->deskripsi = $request->deskripsi;
+        // $alternatif->harga = $request->harga;
+        // $alternatif->kualitas = $request->kualitas;
+        // $alternatif->berat = $request->berat;
+        // $alternatif->iso = $request->iso;
+        // $alternatif->berat = $request->berat;
+        // $alternatif->save();
         return redirect('/alternatif');
     }
     public function delete($id)
